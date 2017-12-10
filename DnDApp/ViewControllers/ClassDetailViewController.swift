@@ -12,7 +12,11 @@ class ClassDetailViewController: UIViewController {
     
     var selectedClass: ClassList?
     
-    var classDetails: ClassDetail?
+    var classDetails: ClassDetail?{
+        didSet {
+            loadClassInfo()
+        }
+    }
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var hitDie: UILabel!
@@ -30,12 +34,11 @@ class ClassDetailViewController: UIViewController {
     }
 
     func loadClassInfo() {
-        let url = "http://www.dnd5eapi.co/api/classes/1"
         let completion: (ClassDetail) -> Void = {(onlineDetails: ClassDetail) in
             self.classDetails = onlineDetails
         }
-        ClassDetailAPIClient.manager.getClassDetails(from: url, completionHandler: completion , errorHandler: {print($0)})
-        hitDie.text = classDetails?.hit_die.description
+        ClassDetailAPIClient.manager.getClassDetails(from: (selectedClass?.url)!, completionHandler: completion , errorHandler: {print($0)})
+        hitDie.text = "Hit Die: \(classDetails?.hit_die ?? 0)"
     }
 
 }
