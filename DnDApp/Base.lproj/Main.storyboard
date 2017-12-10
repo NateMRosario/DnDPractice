@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClassCell" textLabel="T1h-tg-aq4" style="IBUITableViewCellStyleDefault" id="zzI-nn-AUC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClassCell" textLabel="T1h-tg-aq4" style="IBUITableViewCellStyleDefault" id="zzI-nn-AUC">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzI-nn-AUC" id="zE6-Eh-UI5">
@@ -39,6 +39,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.44233819800000002" green="0.44233819800000002" blue="0.44233819800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <segue destination="Rh5-fL-NQe" kind="show" id="7ha-Kr-Mm1"/>
                                         </connections>
@@ -72,6 +73,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leq-rG-VTt">
+                                <rect key="frame" x="20" y="357" width="335" height="241"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit Die" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-ZB-xph">
+                                <rect key="frame" x="11" y="381" width="353" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="55y-65-VhJ">
                                 <rect key="frame" x="11" y="443.5" width="353" height="130"/>
                                 <subviews>
@@ -99,30 +110,29 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SJy-OU-CZH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="234.5"/>
+                                <rect key="frame" x="20" y="64" width="335" height="293"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SJy-OU-CZH" secondAttribute="height" multiplier="8:5" id="yUS-8L-xp6"/>
+                                    <constraint firstAttribute="width" secondItem="SJy-OU-CZH" secondAttribute="height" multiplier="8:7" id="yUS-8L-xp6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit Die" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-ZB-xph">
-                                <rect key="frame" x="11" y="323" width="353" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.4423381979695431" green="0.4423381979695431" blue="0.4423381979695431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.15526979948573338" green="0.51239532058562076" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="SJy-OU-CZH" firstAttribute="leading" secondItem="K9F-hx-lpK" secondAttribute="leading" id="Edg-ev-PCg"/>
+                            <constraint firstItem="55y-65-VhJ" firstAttribute="top" secondItem="SJy-OU-CZH" secondAttribute="bottom" constant="86.5" id="9He-RA-Gae"/>
+                            <constraint firstItem="SJy-OU-CZH" firstAttribute="leading" secondItem="K9F-hx-lpK" secondAttribute="leading" constant="20" id="Edg-ev-PCg"/>
                             <constraint firstItem="SJy-OU-CZH" firstAttribute="centerX" secondItem="0lT-OF-cym" secondAttribute="centerX" id="FCb-7W-0xa"/>
                             <constraint firstItem="SJy-OU-CZH" firstAttribute="top" secondItem="K9F-hx-lpK" secondAttribute="top" id="FaO-wU-vST"/>
+                            <constraint firstItem="K9F-hx-lpK" firstAttribute="bottom" secondItem="leq-rG-VTt" secondAttribute="bottom" constant="20" id="HQS-XM-w0z"/>
                             <constraint firstItem="55y-65-VhJ" firstAttribute="centerX" secondItem="0lT-OF-cym" secondAttribute="centerX" id="M3t-VB-tse"/>
                             <constraint firstItem="K9F-hx-lpK" firstAttribute="trailing" secondItem="55y-65-VhJ" secondAttribute="trailing" constant="11" id="PZI-dK-JqM"/>
+                            <constraint firstItem="leq-rG-VTt" firstAttribute="top" secondItem="SJy-OU-CZH" secondAttribute="bottom" id="SOC-Yt-GqW"/>
                             <constraint firstItem="GVg-ZB-xph" firstAttribute="top" secondItem="SJy-OU-CZH" secondAttribute="bottom" constant="24.5" id="dNw-om-xoe"/>
+                            <constraint firstItem="K9F-hx-lpK" firstAttribute="trailing" secondItem="leq-rG-VTt" secondAttribute="trailing" constant="20" id="fOR-iu-AS6"/>
+                            <constraint firstItem="leq-rG-VTt" firstAttribute="leading" secondItem="K9F-hx-lpK" secondAttribute="leading" constant="20" id="gFA-GC-Q4c"/>
                             <constraint firstItem="K9F-hx-lpK" firstAttribute="trailing" secondItem="GVg-ZB-xph" secondAttribute="trailing" constant="11" id="jLd-n9-4TW"/>
-                            <constraint firstItem="K9F-hx-lpK" firstAttribute="trailing" secondItem="SJy-OU-CZH" secondAttribute="trailing" id="kQ9-Wf-XqK"/>
+                            <constraint firstItem="K9F-hx-lpK" firstAttribute="trailing" secondItem="SJy-OU-CZH" secondAttribute="trailing" constant="20" id="kQ9-Wf-XqK"/>
                             <constraint firstItem="GVg-ZB-xph" firstAttribute="leading" secondItem="K9F-hx-lpK" secondAttribute="leading" constant="11" id="nNC-nY-hZg"/>
-                            <constraint firstItem="55y-65-VhJ" firstAttribute="centerY" secondItem="0lT-OF-cym" secondAttribute="centerY" constant="175" id="rYy-Ki-DtB"/>
                             <constraint firstItem="55y-65-VhJ" firstAttribute="leading" secondItem="K9F-hx-lpK" secondAttribute="leading" constant="11" id="xsg-mO-p9A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9F-hx-lpK"/>
@@ -134,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRP-PN-NsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="134"/>
+            <point key="canvasLocation" x="1504.8" y="133.5832083958021"/>
         </scene>
         <!--Item-->
         <scene sceneID="bFf-3G-6jg">
@@ -145,6 +155,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AjX-E7-YpE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19075190358375627" green="0.19075190358375627" blue="0.19075190358375627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.90157229712535469" blue="0.22416898549142983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

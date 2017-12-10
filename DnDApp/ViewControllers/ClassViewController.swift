@@ -44,6 +44,7 @@ extension ClassViewController: UITableViewDataSource {
         let charClass = classes[indexPath.row]
         let classCell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath)
         classCell.textLabel?.text = charClass.name
+        classCell.textLabel?.textColor = UIColor.white
         return classCell
     }
 }

@@ -9,41 +9,37 @@
 import Foundation
 
 struct ClassDetail: Codable {
-    let hit_die: Int
+    let name: String
+    let hitDie: Int
+    let profSkills: [Proficiency]
+    let profEquip: [Equipment]
+    let savingThrows: [SavingThrow]
+    enum CodingKeys: String, CodingKey {
+        case name
+        case hitDie = "hit_die"
+        case profSkills = "proficiency_choices"
+        case profEquip = "proficiencies"
+        case savingThrows = "saving_throws"
+    }
+    ///ProfSkills
+    struct Proficiency: Codable {
+        let skillList: [Skill]
+        enum CodingKeys: String, CodingKey {
+            case skillList = "from"
+        }
+        struct Skill: Codable {
+            let name: String?
+        }
+    }
+    ///ProfEquip
+    struct Equipment: Codable {
+        let name: String
+    }
+    ///SavingThrow
+    struct SavingThrow: Codable {
+        let name: String
+    }
 }
-
-//struct ClassDetail: Codable {
-//    let name: String
-//    let hitDie: Int
-//    let profSkills: [Proficiency]
-//    let profEquip: [Equipment]
-//    let savingThrows: [SavingThrow]
-//    enum CodingKeys: String, CodingKey {
-//        case name
-//        case hitDie = "hit_die"
-//        case profSkills = "proficiency_choices"
-//        case profEquip = "proficiencies"
-//        case savingThrows = "saving_throws"
-//    }
-//    ///ProfSkills
-//    struct Proficiency: Codable {
-//        let skillList: [Skill]
-//        enum CodingKeys: String, CodingKey {
-//            case skillList = "from"
-//        }
-//        struct Skill: Codable {
-//            let name: String
-//        }
-//    }
-//    ///ProfEquip
-//    struct Equipment: Codable {
-//        let name: String
-//    }
-//    ///SavingThrow
-//    struct SavingThrow: Codable {
-//        let name: String
-//    }
-//}
 
 struct ClassDetailAPIClient {
     private init() {}
